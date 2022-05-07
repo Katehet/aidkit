@@ -42,7 +42,7 @@
                     <td><?php echo $res->exp_date; ?></td>
                     <td>
                         <a href="?id=<?php echo $res->med_id; ?>" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit<?php echo $res->med_id; ?>"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i class="fa fa-trash-alt"></i></a>
+                        <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?php echo $res->med_id; ?>"><i class="fa fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 <!-- Modal edit -->
@@ -82,7 +82,7 @@
                 </div>
                 <!-- Modal edit -->
                 <!-- Modal delete -->
-                <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="delete<?php echo $res->med_id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -90,15 +90,18 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="row row-cols-1 mx-lg-n1">
+                                <div class="row row-cols-2 mx-lg-n1">
                                     <div class="col py-3 px-2">Название:</div>
+                                    <div class="col py-3 px-2"><?php echo $res->med_name; ?></div>
                                     <div class="col py-3 px-2">Количество:</div>
+                                    <div class="col py-3 px-2"><?php echo $res->med_number; ?></div>
                                     <div class="col py-3 px-2">Срок до:</div>
+                                    <div class="col py-3 px-2"><?php echo $res->exp_date; ?></div>
                                 </div>
-                                <form>
+                                <form action="?id=<?php echo $res->med_id; ?>" method="POST">
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                                        <button type="submit" class="btn btn-danger">Удалить</button>
+                                        <button type="submit" name="delete" class="btn btn-danger">Удалить</button>
                                     </div>
                                 </form>
                             </div>
