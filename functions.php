@@ -42,3 +42,15 @@ if (isset($_POST['edit'])) {
         header("Location: ".$_SERVER['HTTP_REFERER']);
     }
 }
+
+//Delete
+
+if (isset($_POST['delete'])) {
+    $sql = ("DELETE FROM medicines WHERE med_id=?");
+    $query = $pdo->prepare($sql);
+    $query->execute([$get_id]);
+
+    if ($query) {
+        header("Location: ".$_SERVER['HTTP_REFERER']);
+    }
+}
