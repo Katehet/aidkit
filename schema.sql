@@ -15,8 +15,8 @@ CREATE TABLE medicines (
     med_name CHAR(128) NOT NULL,
     med_number INT,
     med_type CHAR(64),
-    dosed BOOLEAN,
-    exp_date TIMESTAMP
+    dosed BOOLEAN NOT NULL DEFAULT true,
+    exp_date DATE
 );
 
 CREATE TABLE category (
