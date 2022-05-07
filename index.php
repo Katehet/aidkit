@@ -1,3 +1,4 @@
+<?php include 'functions.php';?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,7 +18,7 @@
         <h1 class="p-3 mx-auto mt-5 text-info" style="width: fit-content; font-family: 'Lobster', cursive;">Лекарства в аптечке <i class="fs-1 text-danger fa-solid fa-pills"></i></h1>
         
         <!-- Add piece button -->
-        <button class="btn btn-success mt-2 mb-2" data-toggle="modal" data-target="#create"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-success mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#create"><i class="fa fa-plus"></i></button>
           
         <!-- Content table -->
         <table class="table">
@@ -39,8 +40,8 @@
                     <td>таб.</td>
                     <td>01.04.2023</td>
                     <td>
-                        <a href="" class="btn btn-success" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-danger" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-alt"></i></a>
+                        <a href="" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#edit"><i class="fa fa-edit"></i></a>
+                        <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i class="fa fa-trash-alt"></i></a>
                     </td>
                 </tr>
             </tbody>
@@ -57,26 +58,26 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="" method="POST">
                         <div class="mb-3">
                             <label for="name" class="form-label">Название:</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" name="name" id="name">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Количество:</label>
-                            <input type="text" class="form-control" id="number">
+                            <input type="text" class="form-control" name="number" id="number">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Вид:</label>
-                            <input type="text" class="form-control" id="type">
+                            <input type="text" class="form-control" name="type" id="type">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Срок годности:</label>
-                            <input type="date" class="form-control" id="expiry">
+                            <input type="date" class="form-control" name="exp_date" id="exp_date">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
-                            <button type="submit" class="btn btn-success">Сохранить</button>
+                            <button type="submit" class="btn btn-success" name="add">Сохранить</button>
                         </div>
                     </form>
                 </div>
