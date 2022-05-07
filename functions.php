@@ -23,3 +23,9 @@ if (isset($_POST['add'])) {
     }
 
 }
+
+//Read
+
+$sql = $pdo->prepare("SELECT * FROM medicines");
+$sql->execute();
+$result = $sql->fetchAll(PDO::FETCH_OBJ);
