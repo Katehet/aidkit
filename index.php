@@ -46,7 +46,7 @@
                     </td>
                 </tr>
                 <!-- Modal edit -->
-                <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="edit<?php echo $res->med_id; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -54,22 +54,22 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="?id=<?php echo $res->med_id; ?>" method="POST">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Название:</label>
-                                        <input type="text" class="form-control" name="name"> id="name">
+                                        <input type="text" class="form-control" value=<?php echo $res->med_name; ?> name="name" id="name">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Количество:</label>
-                                        <input type="text" class="form-control" name="number" id="number">
+                                        <input type="text" class="form-control" value=<?php echo $res->med_number; ?> name="number" id="number">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Вид:</label>
-                                        <input type="text" class="form-control" name="type" id="type">
+                                        <input type="text" class="form-control" value=<?php echo $res->med_type; ?> name="type" id="type">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Срок годности:</label>
-                                        <input type="date" class="form-control" name="exp_date" id="exp_date">
+                                        <input type="date" class="form-control" value=<?php echo $res->exp_date; ?> name="exp_date" id="exp_date">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
